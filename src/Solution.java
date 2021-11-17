@@ -1,5 +1,3 @@
-package Tree;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,4 +39,5 @@ public class Solution {
         res.add(treeNode.val);
         inorder(treeNode.right, res);
     }
+
 }
