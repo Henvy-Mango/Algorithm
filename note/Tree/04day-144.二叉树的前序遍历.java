@@ -1,0 +1,61 @@
+import java.util.ArrayList;
+import java.util.List;
+
+/*
+ * @lc app=leetcode.cn id=144 lang=java
+ *
+ * [144] 二叉树的前序遍历
+ */
+
+// @lc code=start
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode() {}
+ * TreeNode(int val) { this.val = val; }
+ * TreeNode(int val, TreeNode left, TreeNode right) {
+ * this.val = val;
+ * this.left = left;
+ * this.right = right;
+ * }
+ * }
+ */
+class Solution {
+    /* 动态规划思路 */
+    // 定义：输入一个节点，返回以该节点为根的二叉树的前序遍历结果
+    public List<Integer> preorderTraversal(TreeNode root) {
+        LinkedList<Integer> res = new LinkedList<>();
+        if (root == null) {
+            return res;
+        }
+        // 前序遍历结果特点：第一个是根节点的值，接着是左子树，最后是右子树
+        res.add(root.val);
+        res.addAll(preorderTraversal(root.left));
+        res.addAll(preorderTraversal(root.right));
+        return res;
+    }
+
+    /* 回溯算法思路 */
+    LinkedList<Integer> res = new LinkedList<>();
+
+    // 返回前序遍历结果
+    public List<Integer> preorderTraversal2(TreeNode root) {
+        traverse(root);
+        return res;
+    }
+
+    // 二叉树遍历函数
+    void traverse(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        // 前序遍历位置
+        res.add(root.val);
+        traverse(root.left);
+        traverse(root.right);
+    }
+}
+// @lc code=end
