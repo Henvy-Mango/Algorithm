@@ -1,4 +1,10 @@
-```java
+/*
+ * @lc app=leetcode.cn id=652 lang=java
+ *
+ * [652] 寻找重复的子树
+ */
+
+// @lc code=start
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -46,4 +52,5 @@ class Solution {
         return subTree;
     }
 }
-```
+// @lc code=end
+
