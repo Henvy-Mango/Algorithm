@@ -65,8 +65,10 @@ class DebugMethodInterceptor implements MethodInterceptor {
 
         // 方法注解
         MethodAnnotation methodAnnotation = method.getDeclaredAnnotation(MethodAnnotation.class);
-        System.out.println("MethodAnnotation value -> " + methodAnnotation.value());
-        System.out.println("MethodAnnotation type -> " + methodAnnotation.type());
+        if (methodAnnotation != null) {
+            System.out.println("MethodAnnotation value -> " + methodAnnotation.value());
+            System.out.println("MethodAnnotation type -> " + methodAnnotation.type());
+        }
 
         // 参数注解
         Annotation[][] parameterAnnotations = method.getParameterAnnotations();
