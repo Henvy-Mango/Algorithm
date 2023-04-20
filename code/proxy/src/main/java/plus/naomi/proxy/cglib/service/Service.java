@@ -11,7 +11,7 @@ import plus.naomi.proxy.cglib.annotation.ParameterAnnotation;
 public class Service {
     @MethodAnnotation(value = "method annotation", type = "method")
     public String send(@ParameterAnnotation("param annotation") String message) {
-        System.out.println("invoke method send message -> " + message);
+        System.out.println("invoke public method send message -> " + message);
         return message;
     }
 }
