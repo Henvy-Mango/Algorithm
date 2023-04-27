@@ -60,7 +60,9 @@ class DebugMethodInterceptor implements MethodInterceptor {
         Field[] fields = superclass.getDeclaredFields();
         for (Field field : fields) {
             FieldAnnotation fieldAnnotation = field.getDeclaredAnnotation(FieldAnnotation.class);
-            System.out.println("FieldAnnotation value -> " + fieldAnnotation.value());
+            if (fieldAnnotation != null) {
+                System.out.println("FieldAnnotation value -> " + fieldAnnotation.value());
+            }
         }
 
         // 方法注解

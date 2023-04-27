@@ -16,6 +16,8 @@ public class ExtendService extends Service {
     @FieldAnnotation("field annotation 2")
     String result = "This is result.";
 
+    private String name = "This is name.";
+
     private String get(String message) {
         System.out.println("invoke private method get message -> " + message);
         return message;
